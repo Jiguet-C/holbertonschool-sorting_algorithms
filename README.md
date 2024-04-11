@@ -1,89 +1,96 @@
-# <p align="center">C - Sorting algorithms & Big O</p>
+# <p align="center">C - Sorting_algorithms & Big_O</p>
 
-<p align="center">
-To complete
+<img loading="lazy" width="500px" src="https://big-o.io/assets/insertion-sort.png" alt="image_name png"/>
+<img loading="lazy" width="505px" src="https://i.imgur.com/W3wtc8D.jpeg" alt="image_name png"/>
+<img loading="lazy" width="400px" src="https://i.pinimg.com/originals/1b/9f/88/1b9f880263b77d79e6a4b4c40231951a.png" alt="image_name png"/>
 
+
+**Sorting algorithms:**
+
+Sorting algorithms are methods in computer science for rearranging a sequence of elements in a certain order, often numerical or lexicographical, and either in ascending or descending order.
+Sorting algorithms are fundamental to maximizing the efficiency of other algorithms that require sorted data, such as search and merge algorithms.
+
+Here are some examples of popular sorting algorithms:
+- Bubble sort: compare and swap adjacent items if necessary.
+- Sort by selection: selects the smallest element and exchanges it with the first unsorted element.
+- Insertion sort: inserts each element in its appropriate place in the already sorted part.
+- Quick sort: Splits the list in half with smaller elements on one side and larger elements on the other, then recursively sorts the two sublists.
+- Merge sort: splits the list in half, sorts each half, then merges the sorted halves
+
+## ➤ Big O notation
+
+**Big O** notation is a mathematical language used to describe the temporal complexity (execution time) or space complexity (memory usage) of an algorithm.
+It expresses the best, worst and average case execution time of an algorithm.
+
+*For example :*
+
+```
+- O(1): Constant time, independent of the size of the input.
+- O(n): Linear time, where the execution time increases linearly with the size of the input.
+- O(n log n): Linear logarithmic time, often found in efficient sorting algorithms like quicksort and merge sort.
+- O(n^2): Quadratic time, often seen in less efficient sorting algorithms like bubble sort.
+```
+Big O notation is essential for understanding and comparing the efficiency of algorithms, especially when the size of the processed data is large.
 
 # <p align="center">Examples</p>
 
-```
-#include <stdih>
-#include <stdlib.h>
+**Sorting Algorithm Examples :**
 
-/*A structure to represent a node in a binary tree*/
-struct Node
-{
-    int data;
-    struct Node* left;
-    struct Node* right;
-};
+*Bubble Sort - O(n2)*
 
-/*Function to create a new node with the given data*/
-struct Node* newNode(int data)
-{
-    struct Node* node = (struct Node*)malloc(sizeof(struct Node));
-    node->data = data;
-    node->left = NULL;
-    node->right = NULL;
-    return node;
-}
+Description: Repeatedly compares adjacent elements and swaps them if they are in the wrong order.
+*Ex:*
 ```
+Liste initiale : [5, 3, 8, 4, 2]
+Après 1ère passe : [3, 5, 4, 2, 8]
+Après 2ème passe : [3, 4, 2, 5, 8]
+Liste triée : [2, 3, 4, 5, 8]
 ```
-/*Function to insert a new node with the given data in the binary search tree*/
-struct Node* insert(struct Node* node, int data)
-{
-    /*If the tree is empty, return a new node*/
-    if (node == NULL) return newNode(data);
+*Quick Sort - O(nlogn)*
 
-    /*Otherwise, recur down the tree*/
-    if (data < node->data)
-        node->left = insert(node->left, data);
-    else if (data > node->data)
-        node->right = insert(node->right, data);
+*Description:* Selects a 'pivot', then partitions the set into two sublists, one with elements lower than the pivot and the other with elements higher, and sorts these sublists recursively. *Ex:*
 
-    /*Return the (unchanged) node pointer*/
-    return node;
-}
 ```
+Liste initiale : [5, 3, 8, 4, 2]
+Pivot choisi : 4
+Partition : [3, 2] + [4] + [5, 8]
+Tri récursif et fusion : [2, 3, 4, 5, 8]
 ```
-/*Function to do inorder traversal of the binary tree*/
-void inorder(struct Node* root)
-{
-    if (root != NULL)
-{
-        inorder(root->left);
-        printf("%d ", root->data);
-        inorder(root->right);
-    }
-}
-```
-```
-/*Main function to demonstrate the above functions*/
-int main()
-{
-    /* Let us create the following binary search tree
-              50
-           /     \
-          30      70
-         /  \    /  \
-       20   40  60   80 */
+*Merge Sort - O(nlogn)*
 
-    struct Node* root = NULL;
-    root = insert(root, 50);
-    insert(root, 30);
-    insert(root, 20);
-    insert(root, 40);
-    insert(root, 70);
-    insert(root, 60);
-    insert(root, 80);
+*Description:* Splits the list into two halves, sorts each half, then merges the two sorted halves.*Ex.*
 
-    /*Print inoder traversal of the binary search tree*/
-    inorder(root);
-
-    return 0;
-}
 ```
-This code snippet creates a binary search tree (BST) and performs an inorder traversal to print the elements in ascending order.
+Liste initiale : [5, 3, 8, 4, 2]
+Division : [5, 3] et [8, 4, 2]
+Tri des moitiés : [3, 5] et [2, 4, 8]
+Fusion : [2, 3, 4, 5, 8]
+```
+**Big O Notation**
+
+*O(1) - Constant time*
+
+```
+*Description:* Execution time does not depend on the size of the input.
+*Ex.* Access an element in an array by its index.
+```
+
+*O(n) – Linear time*
+
+```
+*Description:* Execution time increases linearly with input size.
+*Ex.* Cycle through all elements of an array.
+
+```
+
+*O(n2) - Quadratic time*
+
+```
+*Description:* Execution time increases quadratically with input size.
+*Ex* Check each pair of elements in an array (*like in bubble sort*).
+```
+
+These examples should give you an idea of how sorting algorithms work and how Big O notation is used to express their effectiveness
 
 # <p align="center">Installation Instructions</p>
 
@@ -106,160 +113,122 @@ gcc -o source_program_name.c
 
 ```
 
-- you are given [this function](https://github.com/hs-hq/0x1C.c)
+- you are given [print_array] and [print_list] fonction :
 
 ```
-                           .----------------------(006)-------.
-                      .--(001)-------.                   .--(008)--.
-                 .--(-02)       .--(003)-------.       (007)     (009)
-       .-------(-06)          (002)       .--(005)
-  .--(-08)--.                           (004)
-(-09)     (-07)
+#include <stdlib.h>
+#include <stdio.h>
+
+/**
+ * print_array - Prints an array of integers
+ *
+ * @array: The array to be printed
+ * @size: Number of elements in @array
+ */
+void print_array(const int *array, size_t size)
+{
+    size_t i;
+
+    i = 0;
+    while (array && i < size)
+    {
+        if (i > 0)
+            printf(", ");
+        printf("%d", array[i]);
+        ++i;
+    }
+    printf("\n");
+}
+```
+```
+#include <stdio.h>
+#include "sort.h"
+
+/**
+ * print_list - Prints a list of integers
+ *
+ * @list: The list to be printed
+ */
+void print_list(const listint_t *list)
+{
+    int i;
+
+    i = 0;
+    while (list)
+    {
+        if (i > 0)
+            printf(", ");
+        printf("%d", list->n);
+        ++i;
+        list = list->next;
+    }
+    printf("\n");
+}
 ```
 
-- Please use the following data structures and types for binary trees:
-
+- Please use the following data structure for doubly linked list:
 ```
 /**
- * struct binary_tree_s - Binary tree node
+ * struct listint_s - Doubly linked list node
  *
  * @n: Integer stored in the node
- * @parent: Pointer to the parent node
- * @left: Pointer to the left child node
- * @right: Pointer to the right child node
+ * @prev: Pointer to the previous element of the list
+ * @next: Pointer to the next element of the list
  */
-struct binary_tree_s
+typedef struct listint_s
 {
-    int n;
-    struct binary_tree_s *parent;
-    struct binary_tree_s *left;
-    struct binary_tree_s *right;
-};
-
-typedef struct binary_tree_s binary_tree_t;
+    const int n;
+    struct listint_s *prev;
+    struct listint_s *next;
+} listint_t;
 ```
-Binary Search Tree :
-```
-typedef struct binary_tree_s bst_t;
-```
-AVL Tree :
+Please, note this format is used for Quiz and Task questions:
 
 ```
-typedef struct binary_tree_s avl_t;
+O(1)
+O(n)
+O(n!)
+n square -> O(n^2)
+log(n) -> O(log(n))
+n * log(n) -> O(nlog(n))
+n + k -> O(n+k)
+…
 ```
-Max Binary Heap
-
-```
-typedef struct binary_tree_s heap_t;
-```
+Here is a quick tip to help you test your sorting algorithms with big sets of random integers: [Random.org](https://www.random.org/integer-sets/)
 
 # <p align="center">Compilation commands for each task</p>
 
 ```
-0. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 0-main.c 0-binary_tree_node.c -o 0-node
+0. gcc -Wall -Wextra -Werror -pedantic 0-bubble_sort.c 0-main.c print_array.c -o bubble
 ```
 
 ```
-1. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 1-main.c 1-binary_tree_insert_left.c 0-binary_tree_node.c -o 1-left
+1. gcc -Wall -Wextra -Werror -pedantic 1-main.c 1-insertion_sort_list.c print_list.c -o insertion
 ```
 
 ```
-2. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 2-main.c 2-binary_tree_insert_right.c 0-binary_tree_node.c -o 2-right
+2. gcc -Wall -Wextra -Werror -pedantic 2-main.c 2-selection_sort.c print_array.c -o select
 ```
-
 ```
-3. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 3-main.c 3-binary_tree_delete.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 3-del
-```
-
-```
-4. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 4-binary_tree_is_leaf.c 4-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 4-leaf
-```
-
-```
-5. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 5-binary_tree_is_root.c 5-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 5-root
-```
-
-```
-6. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 6-main.c 6-binary_tree_preorder.c 0-binary_tree_node.c -o 6-pre
-```
-
-```
-7. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 7-main.c 7-binary_tree_inorder.c 0-binary_tree_node.c -o 7-in
-```
-
-```
-8. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 8-main.c 8-binary_tree_postorder.c 0-binary_tree_node.c -o 8-post
-```
-
-```
-9. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 9-binary_tree_height.c 9-main.c 0-binary_tree_node.c 2-bi
-```
-
-```
-10. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 10-binary_tree_depth.c 10-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 10-depth
-```
-
-```
-11. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 11-binary_tree_size.c 11-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 11-size
-```
-
-```
-12. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 12-binary_tree_leaves.c 12-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 12-leaves
-```
-
-```
-13. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 13-binary_tree_nodes.c 13-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 13-nodes
-```
-
-```
-14. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 14-binary_tree_balance.c 14-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c 1-binary_tree_insert_left.c -o 14-balance
-```
-
-```
-15. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 15-binary_tree_is_full.c 15-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 15-full
-```
-
-```
-16. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 16-binary_tree_is_perfect.c 16-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 16-perfect
-```
-
-```
-17. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 17-main.c 17-binary_tree_sibling.c 0-binary_tree_node.c -o 17-sibling
-```
-
-```
-18. gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 18-main.c 18-binary_tree_uncle.c 0-binary_tree_node.c -o 18-uncle
+3. gcc -Wall -Wextra -Werror -pedantic 3-main.c 3-quick_sort.c print_array.c -o quick
 ```
 
 # <p align="center">Prototypes</p>
-
 ```
-void binary_tree_print(const binary_tree_t *);
-binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
-binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
-binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
-void binary_tree_delete(binary_tree_t *tree);
-int binary_tree_is_leaf(const binary_tree_t *node);
-int binary_tree_is_root(const binary_tree_t *node);
-void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));
-void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int));
-void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
-size_t binary_tree_height(const binary_tree_t *tree);
-size_t binary_tree_depth(const binary_tree_t *tree);
-size_t binary_tree_size(const binary_tree_t *tree);
-size_t binary_tree_leaves(const binary_tree_t *tree);
-size_t binary_tree_nodes(const binary_tree_t *tree);
-int binary_tree_balance(const binary_tree_t *tree);
-int binary_tree_is_full(const binary_tree_t *tree);
-int binary_tree_is_perfect(const binary_tree_t *tree);
-binary_tree_t *binary_tree_sibling(binary_tree_t *node);
-binary_tree_t *binary_tree_uncle(binary_tree_t *node);
+void print_array(const int *array, size_t size);
+void print_list(const listint_t *list);
+void bubble_sort(int *array, size_t size);
+void insertion_sort_list(listint_t **list);
+void selection_sort(int *array, size_t size);
+void quick_sort(int *array, size_t size);
 ```
-
 # <p align="center">Tutorials</p>
 
-- [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree)
-- [Data structures: Binary Tree](https://www.youtube.com/watch?v=H5JubkIy_p8&ab_channel=mycodeschool)
+- [BSorting algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm)
+- [Big O notation](https://stackoverflow.com/questions/487258/what-is-a-plain-english-explanation-of-big-o-notation)
+- [Sorting algorithms animations](https://www.toptal.com/developers/sorting-algorithms)
+- [15 sorting algorithms in 6 minutes ](https://www.youtube.com/watch?v=kPRA0W1kECg&ab_channel=TimoBingmann) ***(Warning***
+*The following video can trigger seizure/epilepsy. It is not required for the project, as it is only a funny visualization of different sorting algorithms)*
 
 ## ➤ License
 Distributed under the MIT License. See [LICENSE](https://www.holbertonschool.fr/) for more information.
