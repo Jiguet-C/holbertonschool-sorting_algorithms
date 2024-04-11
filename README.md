@@ -185,7 +185,7 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 ```
-Please, note this format is used for Quiz and Task questions:
+- Please, note this format is used for Quiz and Task questions:
 
 ```
 O(1)
@@ -197,7 +197,7 @@ n * log(n) -> O(nlog(n))
 n + k -> O(n+k)
 …
 ```
-Here is a quick tip to help you test your sorting algorithms with big sets of random integers: [Random.org](https://www.random.org/integer-sets/)
+- Here is a quick tip to help you test your sorting algorithms with big sets of random integers: [Random.org](https://www.random.org/integer-sets/)
 
 # <p align="center">Compilation commands for each task</p>
 
