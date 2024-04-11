@@ -1,11 +1,10 @@
 # <p align="center">C - Sorting_algorithms & Big_O</p>
 <p align="center">
 <img loading="lazy" width="505px" src="https://i.imgur.com/W3wtc8D.jpeg" alt="image_name png"/>
-<img loading="lazy" width="400px" src="https://i.pinimg.com/originals/1b/9f/88/1b9f880263b77d79e6a4b4c40231951a.png" alt="image_name png"/>
 </p>
 
 
-**Sorting algorithms:**
+## ➤ Sorting algorithms
 
 Sorting algorithms are methods in computer science for rearranging a sequence of elements in a certain order, often numerical or lexicographical, and either in ascending or descending order.
 Sorting algorithms are fundamental to maximizing the efficiency of other algorithms that require sorted data, such as search and merge algorithms.
@@ -16,6 +15,10 @@ Here are some examples of popular sorting algorithms:
 - Insertion sort: inserts each element in its appropriate place in the already sorted part.
 - Quick sort: Splits the list in half with smaller elements on one side and larger elements on the other, then recursively sorts the two sublists.
 - Merge sort: splits the list in half, sorts each half, then merges the sorted halves
+
+<p align="center">
+<img loading="lazy" width="400px" src="https://i.pinimg.com/originals/1b/9f/88/1b9f880263b77d79e6a4b4c40231951a.png" alt="image_name png"/>
+</p>
 
 ## ➤ Big O notation
 
