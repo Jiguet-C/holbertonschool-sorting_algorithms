@@ -1,8 +1,7 @@
 # <p align="center">C - Sorting_algorithms & Big_O</p>
 
-<img loading="lazy" width="100px" src="https://big-o.io/assets/insertion-sort.png" alt="image_name png"/>
-<img loading="lazy" width="105px" src="https://i.imgur.com/W3wtc8D.jpeg" alt="image_name png"/>
-<img loading="lazy" width="100px" src="https://i.pinimg.com/originals/1b/9f/88/1b9f880263b77d79e6a4b4c40231951a.png" alt="image_name png"/>
+<img loading="lazy" width="505px" src="https://i.imgur.com/W3wtc8D.jpeg" alt="image_name png"/>
+<img loading="lazy" width="400px" src="https://i.pinimg.com/originals/1b/9f/88/1b9f880263b77d79e6a4b4c40231951a.png" alt="image_name png"/>
 
 
 **Sorting algorithms:**
