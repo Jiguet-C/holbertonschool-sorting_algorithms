@@ -35,8 +35,8 @@ int lomuto_partition(int *array, int start, int end, int size)
 	if (indexFrontier != end)
 	{
 		temp = array[indexFrontier];
-		array[indexFrontier] = array[size - 1];
-		array[size - 1] = temp;
+		array[indexFrontier] = array[end];
+		array[end] = temp;
 		print_array(array, size);
 	}
 	return (indexFrontier);
